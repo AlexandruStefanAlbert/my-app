@@ -3,15 +3,15 @@
 		<form >
       <img id="back" src="assets/images/back.png" routerLink="/welcome" routerLinkActive="active">
 			<h1>Welcome back! Glad to see you, Again!</h1>
-			<input type="email" placeholder="Email" />
+			<input id="email" type="email" placeholder="Email" />
       <div class="buttonIn">
-        <input [type]=" showPassword ? 'text' : 'password' " placeholder="Password">
+        <input id="password" [type]=" showPassword ? 'text' : 'password' " placeholder="Password">
         <button type="button" (click)='showHidePassword()'> {{ showPassword ? 'Hide' : 'Show' }}</button>
       </div>
 			<a id="a1">Forgot Password?</a>
       <br>
-			<button class="butt" routerLink="/home" routerLinkActive="active">Login</button>
-      <p>Don’t have an account? <a href="http://localhost:4200/register">Register Now</a></p>
+			<button id="login-button" class="butt" routerLink="/home" routerLinkActive="active">Login</button>
+      <p>Don’t have an account? <a href="http://localhost:4200/register" id="register-button">Register Now</a></p>
 		</form>
 
 	</div>
