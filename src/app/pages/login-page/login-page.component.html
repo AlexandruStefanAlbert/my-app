@@ -1,0 +1,25 @@
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form >
+      <img id="back" src="assets/images/back.png" routerLink="/welcome" routerLinkActive="active">
+			<h1>Welcome back! Glad to see you, Again!</h1>
+			<input type="email" placeholder="Email" />
+      <div class="buttonIn">
+        <input [type]=" showPassword ? 'text' : 'password' " placeholder="Password">
+        <button type="button" (click)='showHidePassword()'> {{ showPassword ? 'Hide' : 'Show' }}</button>
+      </div>
+			<a id="a1">Forgot Password?</a>
+      <br>
+			<button class="butt" routerLink="/home" routerLinkActive="active">Login</button>
+      <p>Don’t have an account? <a href="http://localhost:4200/register">Register Now</a></p>
+		</form>
+
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+        <img src="assets/images/p1.png">
+			</div>
+		</div>
+	</div>
+</div>
