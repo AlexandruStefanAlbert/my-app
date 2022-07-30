@@ -14,6 +14,8 @@ import { FooterPageComponent } from './pages/components/footer-page/footer-page.
 import { HeaderPageComponent } from './pages/components/header-page/header-page.component';
 import { MainPageComponent } from './pages/components/main-page/main-page.component';
 import { FoodSurveyPageComponent } from './pages/surveys/food-survey-page/food-survey-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,11 @@ import { FoodSurveyPageComponent } from './pages/surveys/food-survey-page/food-s
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,9 @@ import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular
 import { Observable } from 'rxjs';
 import { User } from 'src/app/Models';
 import { UserService } from 'src/app/Services/user.service';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { Route, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login-page',
@@ -13,29 +16,54 @@ import { UserService } from 'src/app/Services/user.service';
 export class LoginPageComponent implements OnInit {
   showPassword: boolean = false;
 
-  isUser: boolean = false;
-  users : User[]=[];
-  constructor(private userService: UserService) {
+  formGroupLogin!: FormGroup;
+
+  login?: boolean;
+  constructor(private userService: UserService, private router:Router, private http: HttpClient) {
 
   }
 
   ngOnInit(): void {
 
-    this.userService.getUsers().subscribe(value=>{
-      this.users=value;
+    this.formGroupLogin= new FormGroup({
+      email: new FormControl(''),
+      password: new FormControl('')
+    });
 
-      this.users.forEach(data=>{
-        console.log(data);
-      })
 
+    this.formGroupLogin.valueChanges.subscribe(data=>{
+      console.log('values: ', data);
     })
 
   }
 
-  login()
+  onSubmitForm():void
   {
+    this.userService.getUsers({email: this.formGroupLogin.get('email')?.value, password: this.formGroupLogin.get('password')?.value })
+    .subscribe({
+      next: res=>{
+        const token = res.token;
+        localStorage.setItem("jwt", token);
+        this.login=false;
+        this.router.navigate(["/home"]).then(r=> console.log("Route student", r))
+      },
+      error: (err: any) =>{
+        this.login=true;
+        console.log(err);
+      }
+    })
+
 
   }
+
+  onModelChange(event:string):void
+  {
+    console.log('valoare', event);
+    //this.ngModel=event;
+
+  }
+
+
 
   showHidePassword() {
     this.showPassword = !this.showPassword;
