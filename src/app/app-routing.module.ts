@@ -8,7 +8,7 @@ import { MainPageComponent } from './pages/components/main-page/main-page.compon
 import { FoodSurveyPageComponent } from './pages/surveys/food-survey-page/food-survey-page.component';
 import { CarSurveyPageComponent } from './pages/surveys/car-survey-page/car-survey-page.component';
 import { TeacherSurveyPageComponent } from './pages/surveys/teacher-survey-page/teacher-survey-page.component';
-import { LoginGuard } from './login.guard';
+import { LoginGuard } from './guard/login.guard';
 
 const routes: Routes = [
   {

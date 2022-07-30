@@ -11,7 +11,7 @@ export class MainPageComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe(value =>console.log(value))
+
   }
 
 }

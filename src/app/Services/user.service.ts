@@ -10,10 +10,10 @@ export class UserService {
   baseUrl = 'https://localhost:44365/Api/User';
 
 
+  constructor(private http : HttpClient) { }
   getUsers(): Observable<User[]>{
     return this.http.get<User[]>(this.baseUrl);
 
   }
 
-  constructor(private http : HttpClient) { }
 }
