@@ -2,5 +2,5 @@
 <div class="topnav">
   <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>Home</a>
   <a routerLink="/profile" routerLinkActive="active" >Profile</a>
-  <a routerLink="/welcome">Log out</a>
+  <a (click)="logOut()" routerLink="/welcome">Log out</a>
 </div>
