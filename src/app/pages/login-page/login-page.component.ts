@@ -17,6 +17,7 @@ export class LoginPageComponent implements OnInit {
   showPassword: boolean = false;
 
   formGroupLogin!: FormGroup;
+  errorLogin!: string;
 
   login?: boolean;
   constructor(private userService: UserService, private router:Router, private http: HttpClient) {
@@ -49,7 +50,8 @@ export class LoginPageComponent implements OnInit {
       },
       error: (err: any) =>{
         this.login=true;
-        console.log(err);
+        this.errorLogin= "Invalid email or password";
+        console.log('Invalid email or password', err);
       }
     })
 

@@ -1,0 +1,39 @@
+<header>
+  <img class="logo" src="\assets\images\p1.png" alt="logo" >
+<div class="topnav">
+<a  href="/admin">Add Survey</a>
+<a class="active" href="/view-surveys">View Surveys</a>
+<a routerLink="/welcome">Log out</a>
+</div>
+</header>
+<main>
+  <div style="overflow-x:auto;">
+<table>
+  <tr>
+    <th>IDSurvey</th>
+    <th>IDTopic</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>OpeningTime</th>
+    <th>ClosingTime</th>
+    <th>CreatedBy</th>
+    <th>ModifiedBy</th>
+    <th>Button</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>Food Survey</td>
+    <td>....</td>
+    <td>....</td>
+    <td>....</td>
+    <td>....</td>
+    <td>....</td>
+    <td><button type="button">Edit</button>
+      <button type="button">Delete</button></td>
+  </tr>
+
+</table> </div><router-outlet></router-outlet></main>
+<footer>
+  <app-footer-page></app-footer-page>
+</footer>

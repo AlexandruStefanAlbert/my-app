@@ -16,6 +16,9 @@ import { MainPageComponent } from './pages/components/main-page/main-page.compon
 import { FoodSurveyPageComponent } from './pages/surveys/food-survey-page/food-survey-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { ViewSurveysPageComponent } from './pages/view-surveys-page/view-surveys-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { CommonModule } from '@angular/common';
     FooterPageComponent,
     HeaderPageComponent,
     MainPageComponent,
-    FoodSurveyPageComponent
+    FoodSurveyPageComponent,
+    ProfilePageComponent,
+    AdminPageComponent,
+    ViewSurveysPageComponent
   ],
   imports: [
     BrowserModule,

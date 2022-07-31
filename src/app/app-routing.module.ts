@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
@@ -9,6 +9,9 @@ import { FoodSurveyPageComponent } from './pages/surveys/food-survey-page/food-s
 import { CarSurveyPageComponent } from './pages/surveys/car-survey-page/car-survey-page.component';
 import { TeacherSurveyPageComponent } from './pages/surveys/teacher-survey-page/teacher-survey-page.component';
 import { LoginGuard } from './guard/login.guard';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { ViewSurveysPageComponent } from './pages/view-surveys-page/view-surveys-page.component';
 
 const routes: Routes = [
   {
@@ -29,6 +32,20 @@ const routes: Routes = [
   path: '',
   component: WelcomePageComponent,
 },
+
+{
+  path: 'profile',
+  component: ProfilePageComponent,
+},
+{
+  path: 'admin',
+  component: AdminPageComponent,
+},
+{
+  path: 'view-surveys',
+  component: ViewSurveysPageComponent
+},
+
 {
   path: 'home',
   canActivate: [LoginGuard],
