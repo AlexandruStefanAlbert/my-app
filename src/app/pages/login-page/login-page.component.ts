@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, throwIfEmpty } from 'rxjs';
 import { User } from 'src/app/Models';
 import { UserService } from 'src/app/Services/user.service';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
@@ -18,7 +18,8 @@ export class LoginPageComponent implements OnInit {
 
   formGroupLogin!: FormGroup;
   errorLogin!: string;
-
+  @Input() emailProfile!:string;
+  @Input() passProfile!:string;
   login?: boolean;
   constructor(private userService: UserService, private router:Router, private http: HttpClient) {
 
@@ -33,10 +34,13 @@ export class LoginPageComponent implements OnInit {
 
 
     this.formGroupLogin.valueChanges.subscribe(data=>{
+      this.emailProfile=data.email;
+      this.passProfile=data.pass;
       console.log('values: ', data);
     })
 
   }
+
 
   onSubmitForm():void
   {

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, from, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../Models';
+import { Survey } from '../Models/survey.model';
 import { AddUser } from '../Models/userProfile';
 
 @Injectable({
@@ -14,6 +15,7 @@ export class UserService {
   baseUrl = 'https://localhost:44365/Api/User';
   url ="auth/login";
   register="User";
+  user!:string;
   constructor(private http : HttpClient, private router:Router) { }
 
   isUserAuthenticated(){
@@ -34,5 +36,10 @@ export class UserService {
     return this.http.post<AddUser>(this.baseUrl, credentials)
 
   }
+
+  addSurvey(credentials: Survey): Observable<any>{
+    return this.http.post<Survey>("https://localhost:44365/Api/Survey", credentials);
+  }
+
 
 }

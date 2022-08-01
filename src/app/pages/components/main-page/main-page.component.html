@@ -1,13 +1,19 @@
-<ul>
-  <div class="search-container">
-    <form >
-      <input type="text" placeholder="Search.." name="search">
-      <button type="search">Search</button>
-    </form>
+<div class="search-container">
+  <form >
+    <input type="text" placeholder="Search.." name="search">
+    <button type="search">Search</button>
+  </form>
+</div>
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Surveys:</th>
+        <th>Description</th>
+      </tr>
+        <tr *ngFor="let survey of survey">
+          <td><a >{{survey.name}}</a></td>
+          <td>{{survey.description}}</td>
+        </tr>
+    </table>
   </div>
-  <br>
-  <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>Food Survey</a></li>
-  <li><a routerLink="/home/car" routerLinkActive="active">Car Survey</a></li>
-  <li><a routerLink="/home/teacher" routerLinkActive="active">Teachers Survey</a></li>
-</ul>
 <router-outlet></router-outlet>

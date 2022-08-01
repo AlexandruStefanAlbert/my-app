@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { AddUser } from 'src/app/Models/userProfile';
 import { UserService } from 'src/app/Services/user.service';
+import { LoginPageComponent } from '../login-page/login-page.component';
 
 @Component({
   selector: 'app-register-page',

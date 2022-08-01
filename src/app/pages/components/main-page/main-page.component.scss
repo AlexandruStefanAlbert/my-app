@@ -1,30 +1,22 @@
-ul {
-  list-style-type: none;
-  margin-left: 8px;
-  padding: 0;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
   width: 25%;
+  margin: 0px;
+  padding: 0;
   background-color: #ffffff;
   position: fixed;
-  height: 50%;
+  height: 20%;
   overflow: auto;
+  margin-left: 0.8%;
+  margin-top:4%
 }
 
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
+td, th {
+  text-align: center;
+  padding: 8px;
 }
 
-li a.active {
-  background-color:  rgb(231, 231, 231);
-  color: black;
-}
-
-li a:hover:not(.active) {
-  background-color: rgb(231, 231, 231);
-  color:black;
-}
 input[type=text], select, textarea {
   width: 65%;
   padding: 12px;
@@ -39,9 +31,8 @@ input[type=text], select, textarea {
   font-size: 17px;
   border: none;
   cursor: pointer;
-  width: 24%;
   overflow: hidden;
-  margin-left: 2%;
+  margin-left: 4%;
 }
 
 .search-container button:hover {
@@ -53,5 +44,27 @@ input[type=text], select, textarea {
   font-size: 17px;
   border: none;
   background-color: rgb(231, 231, 231);
-  width:70%
+  width:65%;
+  margin-left: 4%;
+}
+
+.search-container{
+  position: fixed;
+}
+
+a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+a.active {
+  background-color:  rgb(231, 231, 231);
+  color: black;
+}
+
+a:hover:not(.active) {
+  background-color: rgb(231, 231, 231);
+  color:black;
 }

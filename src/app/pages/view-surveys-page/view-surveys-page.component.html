@@ -10,8 +10,7 @@
   <div style="overflow-x:auto;">
 <table>
   <tr>
-    <th>IDSurvey</th>
-    <th>IDTopic</th>
+
     <th>Name</th>
     <th>Description</th>
     <th>OpeningTime</th>
@@ -20,17 +19,16 @@
     <th>ModifiedBy</th>
     <th>Button</th>
   </tr>
-  <tr>
-    <td>1</td>
-    <td>1</td>
-    <td>Food Survey</td>
-    <td>....</td>
-    <td>....</td>
-    <td>....</td>
-    <td>....</td>
-    <td>....</td>
-    <td><button type="button">Edit</button>
-      <button type="button">Delete</button></td>
+  <tr *ngFor="let data of survey">
+
+    <td>{{data.name}}</td>
+    <td>{{data.description}}</td>
+    <td>{{data.opening_Time}}</td>
+    <td>{{data.closing_Time}}</td>
+    <td>{{data.created_By}}</td>
+    <td>{{data.modified_By}}</td>
+    <td><button type="submit">Edit</button>
+      <button (click)="deleteSurvey(data.name)" type="button">Delete</button></td>
   </tr>
 
 </table> </div><router-outlet></router-outlet></main>
